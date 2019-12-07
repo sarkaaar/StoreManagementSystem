@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Group>
+         <children>
+            <Pane focusTraversable="true" mouseTransparent="true" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #411934;">
+               <children>
+                  <Label alignment="CENTER" layoutX="19.0" layoutY="25.0" prefHeight="26.0" prefWidth="1243.0" style="-fx-text-fill: white;" text="ADD NEW BILL" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Hack Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="690.0" style="-fx-text-fill: white;" text="A project made by FA18-BCS-C" />
+                  <Label layoutX="564.0" layoutY="682.0" prefHeight="16.0" prefWidth="152.0" style="-fx-text-fill: white;" text="© All Rights Reserved" />
+                  <ComboBox layoutX="120.0" layoutY="126.0" prefWidth="150.0" promptText="Sr. No." />
+                  <ComboBox layoutX="290.0" layoutY="126.0" prefHeight="26.0" prefWidth="477.0" promptText="Name" />
+                  <TextField layoutX="793.0" layoutY="126.0" promptText="Quantity" />
+                  <TextField layoutX="980.0" layoutY="126.0" promptText="Price" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </opaqueInsets>
+               <effect>
+                  <Blend mode="HARD_LIGHT" />
+               </effect>
+               <padding>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </padding></Pane>
+         </children>
+      </Group>
+   </children>
+</GridPane>

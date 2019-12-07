@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="id" layoutX="39.0" layoutY="103.0" prefHeight="25.0" prefWidth="107.0" promptText="ID" />
+      <TextField fx:id="name" layoutX="155.0" layoutY="103.0" prefHeight="25.0" prefWidth="154.0" promptText="NAME" />
+      <TextField fx:id="quantity" layoutX="316.0" layoutY="103.0" prefHeight="25.0" prefWidth="82.0" promptText="QUANTITY" />
+      <TextField fx:id="unitPrice" layoutX="404.0" layoutY="103.0" prefHeight="25.0" prefWidth="82.0" promptText="PRICE" />
+      <Button layoutX="493.0" layoutY="103.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Add" />
+      <VBox layoutX="39.0" layoutY="138.0" prefHeight="200.0" prefWidth="447.0">
+         <children>
+            <TableView fx:id="myTable" prefHeight="200.0" prefWidth="483.0" />
+         </children>
+      </VBox>
+   </children>
+</Pane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="488.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="67.0" text="Go" />
+      <DatePicker layoutX="53.0" layoutY="35.0" promptText="From" />
+      <DatePicker layoutX="268.0" layoutY="35.0" promptText="To" />
+      <TableView layoutX="46.0" layoutY="88.0" prefHeight="276.0" prefWidth="509.0">
+        <columns>
+          <TableColumn prefWidth="85.0" text="ID" />
+          <TableColumn prefWidth="85.0" text="Name" />
+          <TableColumn prefWidth="85.0" text="Quantity" />
+            <TableColumn prefWidth="85.0" text="Unit Price" />
+            <TableColumn prefWidth="85.0" text="Sale Price" />
+            <TableColumn prefWidth="85.0" text="Total Profit" />
+        </columns>
+      </TableView>
+       
+   </children>
+</Pane>
