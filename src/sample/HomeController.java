@@ -4,20 +4,33 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class HomeController implements Initializable  {
-
+public class HomeController {
 
     @FXML
+    public AnchorPane parent;
+
+    @FXML
+    public void OnClick(ActionEvent e) throws IOException {
+        AnchorPane child= FXMLLoader.load(getClass().getResource("CreateNewBill.fxml"));
+        parent.getChildren().setAll(child);
+
+    }
+
+
+ /*   @FXML
     private TextField id;
     @FXML
     private TextField name;
@@ -53,7 +66,7 @@ public class HomeController implements Initializable  {
 
     }
 
-
+*/
     //@FXML
   //  public void button(ActionEvent event) {
       //  idCol.setCellValueFactory(new PropertyValueFactory<Person, String>("idd"));

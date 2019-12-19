@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #021129;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #021129;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
    <children>
-      <JFXButton buttonType="RAISED" layoutX="94.0" layoutY="218.0" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #7F8C8D;" text="Create New Bill">
+      <JFXButton buttonType="RAISED" layoutX="94.0" layoutY="218.0" onAction="#OnClick" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #7F8C8D;" text="Create New Bill">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
