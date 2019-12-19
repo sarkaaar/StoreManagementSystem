@@ -23,10 +23,16 @@ public class HomeController {
     public AnchorPane parent;
 
     @FXML
-    public void OnClick(ActionEvent e) throws IOException {
+    public void createNewBill(ActionEvent e) throws IOException {
         AnchorPane child= FXMLLoader.load(getClass().getResource("CreateNewBill.fxml"));
         parent.getChildren().setAll(child);
 
+    }
+
+    @FXML
+    public void addNewItem(ActionEvent e) throws IOException {
+        AnchorPane child = FXMLLoader.load(getClass().getResource("AddNewItem.fxml"));
+        parent.getChildren().setAll(child);
     }
 
 

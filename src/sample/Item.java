@@ -3,13 +3,13 @@ package sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Person {
+public class Item {
     private SimpleStringProperty id;
     private SimpleStringProperty name;
     private SimpleIntegerProperty qty;
     private SimpleIntegerProperty unitPrice;
 
-    public Person(String id, String name, int qty, int unitPrice) {
+    public Item(String id, String name, int qty, int unitPrice) {
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
         this.qty = new SimpleIntegerProperty(qty);
