@@ -18,6 +18,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CreateNewBillController implements Initializable {
+
+    Database database=new Database();
+
     @FXML
     public AnchorPane parent;
     @FXML
@@ -61,9 +64,32 @@ public class CreateNewBillController implements Initializable {
                 enterName.getText(),
                 Integer.parseInt(enterQty.getText()),
                 Integer.parseInt(enterUnitPrice.getText())));
+
+        database.insertSales(enterId.getText(), enterName.getText(), enterQty.getText(), enterUnitPrice.getText());
+        enterId.clear();
+        enterName.clear();
+        enterQty.clear();
+        enterUnitPrice.clear();
+
     }
 
-    public class Item {
+/*    public void disableButton(){
+        String idField=enterId.getText();
+        String nameField=enterName.getText();
+        String qtyField=enterQty.getText();
+        String priceField=enterUnitPrice.getText();
+
+        if (
+                        (idField.isEmpty() || idField.trim().isEmpty()) ||
+                        (nameField.isEmpty() || nameField.trim().isEmpty()) ||
+                        (qtyField.isEmpty() || qtyField.trim().isEmpty())  ||
+                        (priceField.isEmpty() || priceField.trim().isEmpty())
+        ){
+
+        }*/
+    }
+
+  /*  public class Item {
         private SimpleStringProperty id;
         private SimpleStringProperty name;
         private SimpleIntegerProperty qty;
@@ -107,5 +133,5 @@ public class CreateNewBillController implements Initializable {
         public void setUnitPrice(int unitPrice) {
             this.unitPrice.set(unitPrice);
         }
-    }
-}
+    }*/
+

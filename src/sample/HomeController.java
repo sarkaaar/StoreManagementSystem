@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,7 +32,7 @@ public class HomeController {
 
     @FXML
     public void addNewItem(ActionEvent e) throws IOException {
-        AnchorPane child = FXMLLoader.load(getClass().getResource("AddNewItem.fxml"));
+        AnchorPane child= FXMLLoader.load(getClass().getResource("AddNewItem.fxml"));
         parent.getChildren().setAll(child);
     }
 
