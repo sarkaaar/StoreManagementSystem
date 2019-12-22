@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 public class HomeController {
 
     @FXML
@@ -27,7 +26,6 @@ public class HomeController {
     public void createNewBill(ActionEvent e) throws IOException {
         AnchorPane child= FXMLLoader.load(getClass().getResource("CreateNewBill.fxml"));
         parent.getChildren().setAll(child);
-
     }
 
     @FXML
@@ -35,7 +33,6 @@ public class HomeController {
         AnchorPane child= FXMLLoader.load(getClass().getResource("AddNewItem.fxml"));
         parent.getChildren().setAll(child);
     }
-
 
  /*   @FXML
     private TextField id;

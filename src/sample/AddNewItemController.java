@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +17,6 @@ public class AddNewItemController {
 
     @FXML
     public AnchorPane parent;
-
     @FXML
     public TextField id;
     @FXML
@@ -28,8 +26,6 @@ public class AddNewItemController {
     @FXML
     public TextField unitPrice;
 
-
-
     public void addToStock(){
         database.addInStock(id.getText(), name.getText(), qty.getText(), unitPrice.getText());
         id.clear();
@@ -38,15 +34,11 @@ public class AddNewItemController {
         unitPrice.clear();
     }
 
-
     @FXML
     public void home(ActionEvent e) throws IOException {
         AnchorPane child = FXMLLoader.load(getClass().getResource("Home.fxml"));
         parent.getChildren().setAll(child);
     }
-
-
-
 
     /*public class Database {
 

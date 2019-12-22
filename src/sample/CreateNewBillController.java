@@ -65,7 +65,10 @@ public class CreateNewBillController implements Initializable {
                 Integer.parseInt(enterQty.getText()),
                 Integer.parseInt(enterUnitPrice.getText())));
 
-        database.insertSales(enterId.getText(), enterName.getText(), enterQty.getText(), enterUnitPrice.getText());
+        database.insertSales(enterId.getText(),
+                 enterName.getText(),
+                 enterQty.getText(),
+                 enterUnitPrice.getText());
         enterId.clear();
         enterName.clear();
         enterQty.clear();
