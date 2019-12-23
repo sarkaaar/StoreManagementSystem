@@ -21,12 +21,12 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="490.0" layoutY="360.0" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #7F8C8D;" text="Inventory">
+      <JFXButton buttonType="RAISED" layoutX="490.0" layoutY="360.0" onAction="#inventory" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #7F8C8D;" text="Inventory">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></JFXButton>
 
-      <JFXButton buttonType="RAISED" layoutX="490.0" layoutY="440.0" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #7F8C8D;" text="View Sales">
+      <JFXButton buttonType="RAISED" layoutX="490.0" layoutY="440.0" prefHeight="50.0" onAction="#viewSales" prefWidth="300.0" style="-fx-background-color: #7F8C8D;" text="View Sales">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></JFXButton>

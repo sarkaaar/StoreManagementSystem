@@ -6,6 +6,7 @@ public class Database {
 
     Connection conn = null;
     ResultSet result;
+    Statement stat;
     public void connectToDatabase() {
         try {
             conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\SARKAAAR\\Desktop\\database.db");
@@ -19,7 +20,7 @@ public class Database {
     public void insertSales(String i, String n, String qty, String p) {
         try {
             connectToDatabase();
-            Statement stat = conn.createStatement();
+            stat = conn.createStatement();
             stat.execute("CREATE TABLE IF NOT EXISTS sales" + "(id TEXT, name TEXT, quantity TEXT, price TEXT)");
             stat.execute("INSERT INTO sales (id, name, quantity, price)" + String.format(" VALUES ('%s','%s','%s','%s')", i, n, qty, p));
         }
@@ -27,12 +28,21 @@ public class Database {
             System.out.println("ERROR! Unable to insert in database");
             e.printStackTrace();
         }
+        finally {
+            try{
+                stat.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("ERROR IN CLOSING THE DATABASE");
+                e.printStackTrace();
+            }
+        }
     }
 
     public void addInStock(String i, String n, String qty, String p) {
         try {
             connectToDatabase();
-            Statement stat = conn.createStatement();
+            stat = conn.createStatement();
             stat.execute("CREATE TABLE IF NOT EXISTS inventory" + "(id TEXT, name TEXT, quantity TEXT, price TEXT)");
             stat.execute("INSERT INTO inventory (id, name, quantity, price)" + String.format(" VALUES ('%s','%s','%s','%s')" , i, n, qty, p));
         }
@@ -40,9 +50,18 @@ public class Database {
             System.out.println("ERROR! Unable to add item in stock");
             e.printStackTrace();
         }
+        finally {
+            try{
+                stat.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("ERROR IN CLOSING THE DATABASE");
+                e.printStackTrace();
+            }
+        }
     }
 
-    public ResultSet displayInventory() {
+/*    public ResultSet displayInventory() {
         try {
             connectToDatabase();
             Statement stat = conn.createStatement();
@@ -66,5 +85,5 @@ public class Database {
             e.printStackTrace();
         }
         return result;
-    }
+    }*/
 }

@@ -22,6 +22,8 @@ public class InventoryController implements Initializable {
 
     Database data= new Database();
     ObservableList list;
+    Connection conn;
+    Statement stat;
 
 
     @FXML
@@ -44,8 +46,8 @@ public class InventoryController implements Initializable {
         list= FXCollections.observableArrayList ();
 
         try{
-            Connection conn= DriverManager.getConnection("jdbc:sqlite:C:\\Users\\SARKAAAR\\Desktop\\database.db");
-            Statement stat = conn.createStatement();
+            conn= DriverManager.getConnection("jdbc:sqlite:C:\\Users\\SARKAAAR\\Desktop\\database.db");
+            stat = conn.createStatement();
             stat.execute("SELECT * FROM inventory");
             ResultSet rs=stat.getResultSet();
             while(rs.next()){
@@ -69,6 +71,16 @@ public class InventoryController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        finally {
+            try{
+                stat.close();
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("ERROR IN CLOSING THE DATABASE");
+                e.printStackTrace();
+            }
+        }
+
 
     }
 
