@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="parent" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #021129;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AboutController">
+   <children>
+      <Label layoutX="71.0" layoutY="40.0" prefHeight="31.0" prefWidth="167.0" style="-fx-text-fill: White;" text="About" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="185.0" layoutY="103.0" text="A project Made By" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+       <Label layoutX="250.0" layoutY="170.0" text="i)   Hafiz Ammar Zahid" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="250.0" layoutY="220.0" text="     FA18-BCS-011" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="250.0" layoutY="270.0" text="     GUI" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="250.0" layoutY="320.0" text="     Interface" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+
+       <Label layoutX="550.0" layoutY="170.0" text="ii)  Arsal Nadeem" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="550.0" layoutY="220.0" text="     FA18-BCS-127" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="550.0" layoutY="270.0" text="     Database" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="550.0" layoutY="320.0" text="     Data In / Out" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+
+       <Label layoutX="850.0" layoutY="170.0" text="iii) Abdul Wali" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="850.0" layoutY="220.0" text="     FA18-BCS-196" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="850.0" layoutY="270.0" text="     Flow of Program" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+       <Label layoutX="850.0" layoutY="320.0" text="     Event Handling" textFill="WHITE"><font><Font name="Calibri" size="30.0" /></font></Label>
+
+       <Label layoutX="200.0" layoutY="455.0" prefHeight="35.0" prefWidth="848.0" text="Github Link : https://github.com/sarkaaar/StoreManagementSystem " textAlignment="CENTER" textFill="WHITE" underline="true"><font><Font name="Calibri" size="30.0" /></font></Label>
+
+       <JFXButton buttonType="RAISED" layoutX="1094.0" layoutY="571.0" onAction="#home" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #7F8C8D;" text="&lt;--">
+           <font>
+               <Font name="System Bold" size="34.0" />
+           </font>
+       </JFXButton>
+   </children>
+</AnchorPane>

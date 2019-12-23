@@ -3,13 +3,13 @@ package sample;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Item {
+public class ReceiptTableDataModel {
     private SimpleStringProperty id;
     private SimpleStringProperty name;
     private SimpleIntegerProperty qty;
     private SimpleIntegerProperty unitPrice;
 
-    public Item(String id, String name, int qty, int unitPrice) {
+    public ReceiptTableDataModel(String id, String name, int qty, int unitPrice) {
         this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
         this.qty = new SimpleIntegerProperty(qty);

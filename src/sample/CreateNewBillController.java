@@ -1,13 +1,12 @@
 package sample;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -20,19 +19,20 @@ import java.util.ResourceBundle;
 public class CreateNewBillController implements Initializable {
 
     Database database=new Database();
+    ObservableList list = FXCollections.observableArrayList ();
 
     @FXML
     public AnchorPane parent;
     @FXML
-    private TableView<Item> table=new TableView<> ();
+    private TableView<ReceiptTableDataModel> table;
     @FXML
-    private TableColumn<Item,String> id;
+    private TableColumn<ReceiptTableDataModel,String> id;
     @FXML
-    private TableColumn<Item,String> name;
+    private TableColumn<ReceiptTableDataModel,String> name;
     @FXML
-    private TableColumn<Item,Integer> qty;
+    private TableColumn<ReceiptTableDataModel,Integer> qty;
     @FXML
-    private TableColumn<Item,Integer> unitPrice;
+    private TableColumn<ReceiptTableDataModel,Integer> unitPrice;
     @FXML
     private TextField enterId;
     @FXML
@@ -42,15 +42,36 @@ public class CreateNewBillController implements Initializable {
     @FXML
     private TextField enterUnitPrice;
     @FXML
+    private Button add;
+
+
+
+    @FXML
     public void home(ActionEvent e) throws IOException {
         AnchorPane child= FXMLLoader.load(getClass().getResource("Home.fxml"));
         parent.getChildren().setAll(child);
     }
 
-    ObservableList list = FXCollections.observableArrayList ();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+/*        if (
+                (enterId.getText().isEmpty() || enterId.getText().trim().isEmpty())  ||
+                        (enterName.getText().isEmpty() || enterName.getText().trim().isEmpty())  ||
+                        (enterQty.getText().isEmpty() || enterQty.getText().trim().isEmpty())  ||
+                        (enterUnitPrice.getText().isEmpty() || enterUnitPrice.getText().trim().isEmpty())
+        ){
+            add.setDisable(true);
+        }
+ */
+
+
+
+
+
+
         id.setCellValueFactory (new PropertyValueFactory<>("id"));
         name.setCellValueFactory (new PropertyValueFactory<> ("name"));
         qty.setCellValueFactory (new PropertyValueFactory<> ("qty"));
@@ -60,81 +81,16 @@ public class CreateNewBillController implements Initializable {
 
     @FXML
     public void addToTable (ActionEvent event){
-        list.add(new Item(enterId.getText(),
+        list.add(new ReceiptTableDataModel(enterId.getText(),
                 enterName.getText(),
                 Integer.parseInt(enterQty.getText()),
                 Integer.parseInt(enterUnitPrice.getText())));
 
-        database.insertSales(enterId.getText(),
-                 enterName.getText(),
-                 enterQty.getText(),
-                 enterUnitPrice.getText());
+        database.insertSales(enterId.getText(), enterName.getText(), enterQty.getText(), enterUnitPrice.getText());
         enterId.clear();
         enterName.clear();
         enterQty.clear();
         enterUnitPrice.clear();
 
     }
-
-/*    public void disableButton(){
-        String idField=enterId.getText();
-        String nameField=enterName.getText();
-        String qtyField=enterQty.getText();
-        String priceField=enterUnitPrice.getText();
-
-        if (
-                        (idField.isEmpty() || idField.trim().isEmpty()) ||
-                        (nameField.isEmpty() || nameField.trim().isEmpty()) ||
-                        (qtyField.isEmpty() || qtyField.trim().isEmpty())  ||
-                        (priceField.isEmpty() || priceField.trim().isEmpty())
-        ){
-
-        }*/
-    }
-
-  /*  public class Item {
-        private SimpleStringProperty id;
-        private SimpleStringProperty name;
-        private SimpleIntegerProperty qty;
-        private SimpleIntegerProperty unitPrice;
-
-        public Item(String id, String name, int qty, int unitPrice) {
-            this.id = new SimpleStringProperty(id);
-            this.name = new SimpleStringProperty(name);
-            this.qty = new SimpleIntegerProperty(qty);
-            this.unitPrice = new SimpleIntegerProperty(unitPrice);
-        }
-
-        public String getId() {
-            return id.get();
-        }
-
-        public String getName() {
-            return name.get();
-        }
-
-        public int getQty() {
-            return qty.get();
-        }
-
-        public int getUnitPrice() {
-            return unitPrice.get();
-        }
-
-        public void setId(String id) {
-            this.id.set(id);
-        }
-
-        public void setName(String name) {
-            this.name.set(name);
-        }
-
-        public void setQty(int qty) {
-            this.qty.set(qty);
-        }
-
-        public void setUnitPrice(int unitPrice) {
-            this.unitPrice.set(unitPrice);
-        }
-    }*/
-
+}
